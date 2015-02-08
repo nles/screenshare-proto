@@ -1,15 +1,20 @@
 <div class="row">
-  <div class="large-12">
+  <div class="large-12" id="ui">
     <div style="text-align:center">
       <br />
       <br />
       <br />
       <h1>Hello</h1>
-      <input style="width:25%;margin:0 auto;text-align:center;" type="text" placeholder="Identifier" /><br />
+      <input style="width:25%;margin:0 auto;text-align:center;" id="identifier" type="text" placeholder="Identifier" /><br />
       <button id="share-btn" class="button round">Share A Screen</button>
       <button id="view-btn" class="button round">View A Screen</button>
       <br />
+      <div id="sharing" style="display:none;">You are sharing your screen as <span class='id-placeholder'></span></div>
+      <div id="opened" style="display:none;">Someone opened a view of your screen</div>
     </div>
   </div>
+</div>
+<div id="remote-video-wrapper">
+  <video id="remote-video" muted="true" autoplay width="100%"></video>
 </div>
 <div id="screen-video" style="max-width:100%"></div>
