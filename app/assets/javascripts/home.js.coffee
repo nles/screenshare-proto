@@ -53,17 +53,17 @@ $ ->
 
   # ####
   # view screen
-  $("#view-btn").on 'click', ->
+  window['viewScreen'] = ->
     identifier = getIdentifier()
     peer = initPeerConnection(uniqueToken())
-    navigator.getUserMedia = navigator.mozGetUserMedia or navigator.webkitGetUserMedia
-    navigator.getUserMedia {video:true, audio:false}, ((stream) ->
-      call = peer.call(identifier, stream)
+
+    conn = peer.connect(identifier)
+    peer.on "call", (call) ->
+      call.answer null
       call.on "stream", (remoteStream) ->
         $('#remote-video').prop('src', URL.createObjectURL(remoteStream));
-        #$('#ui').hide()
-    ), (error) ->
-      console.log error
+
+  $("#view-btn").on 'click', (-> window['viewScreen']())
 
   # ####
   # share screen
@@ -81,11 +81,12 @@ $ ->
 
   $("#share-btn").on 'click', ->
     identifier = getIdentifier()
-    initPeerConnection identifier
+    peer = initPeerConnection identifier
     initScreenShare (stream) ->
       $('#sharing').show()
       $('#sharing .id-placeholder').text(identifier)
-      peer.on "call", (call) ->
-        # Answer the call with an A/V stream.
-        call.answer stream
-        $('#opened').show()
+
+      peer.on "connection", (conn) ->
+        conn.on "open", ->
+          call = peer.call(conn.peer, stream)
+          return

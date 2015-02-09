@@ -1,3 +1,20 @@
+<% if @screen_id %>
+<div class="row">
+  <div class="large-12" id="ui">
+    <br />
+    <div class="viewing-caption">Viewing a screen called <strong><%= @screen_id %></strong></div>
+    <hr />
+    <div id="remote-video-wrapper">
+      <video id="remote-video" muted="true" width="100%" autoplay controls></video>
+    </div>
+  </div>
+</div>
+<input style="display:none;" id="identifier" type="text" value="<%= @screen_id %>" />
+<% content_for :javascripts do %>
+<script>jQuery(function(){ window['viewScreen'](); });</script>
+<% end %>
+
+<% else %>
 <div class="row">
   <div class="large-12" id="ui">
     <div style="text-align:center">
@@ -7,14 +24,11 @@
       <h1>Hello</h1>
       <input style="width:25%;margin:0 auto;text-align:center;" id="identifier" type="text" placeholder="Identifier" /><br />
       <button id="share-btn" class="button round">Share A Screen</button>
-      <button id="view-btn" class="button round">View A Screen</button>
+      <%#<button id="view-btn" class="button round">View A Screen</button>%>
       <br />
-      <div id="sharing" style="display:none;">You are sharing your screen as <span class='id-placeholder'></span></div>
+      <div id="sharing" style="display:none;">You are sharing a screen.<br />The screen can be viewed at {{URL_HERE}}/<span class='id-placeholder'></span></div>
       <div id="opened" style="display:none;">Someone opened a view of your screen</div>
     </div>
   </div>
 </div>
-<div id="remote-video-wrapper">
-  <video id="remote-video" muted="true" autoplay width="100%"></video>
-</div>
-<div id="screen-video" style="max-width:100%"></div>
+<% end %>
