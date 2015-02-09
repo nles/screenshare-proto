@@ -35,5 +35,7 @@ end
 gem 'foundation-rails', '~> 5.4.5'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
+gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm', group: :development
+gem 'capistrano-passenger', group: :development, require: false
 gem 'thin', group: :development
