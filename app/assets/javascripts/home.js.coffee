@@ -84,6 +84,8 @@ $ ->
     peer = initPeerConnection identifier
     initScreenShare (stream) ->
       $('#sharing').show()
+      link = $('#sharing a')
+      link.attr('href',link.attr('href')+"/"+identifier)
       $('#sharing .id-placeholder').text(identifier)
 
       peer.on "connection", (conn) ->
