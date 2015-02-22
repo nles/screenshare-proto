@@ -92,3 +92,15 @@ $ ->
         conn.on "open", ->
           call = peer.call(conn.peer, stream)
           return
+
+  $("#extension-install-button").on 'click', ->
+    !!navigator.webkitGetUserMedia &&
+    !!window.chrome &&
+    !!chrome.webstore &&
+    !!chrome.webstore.install &&
+    chrome.webstore.install('https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom', (-> location.reload() ), ((what)-> console.log(what) ))
+
+  if chrome.app.isInstalled
+    console.log "INSTALLED"
+  else
+    console.log "NOT INSTALLED"
