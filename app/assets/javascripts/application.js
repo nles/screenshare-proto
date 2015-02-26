@@ -15,6 +15,8 @@
 //= require foundation
 //= require turbolinks
 //= require peer
+//= require spin
+//= require ladda
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

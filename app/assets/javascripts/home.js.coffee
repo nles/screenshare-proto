@@ -68,11 +68,11 @@ $ ->
   # ####
   # share screen
   initScreenShare = (cb) ->
+    return # REMOVE AND INSERT UI-LOGIC
     getScreenId (error, sourceId, screen_constraints) ->
       # error    == null || 'permission-denied' || 'not-installed' || 'installed-disabled' || 'not-chrome'
       # sourceId == null || 'string' || 'firefox'
       navigator.getUserMedia = navigator.mozGetUserMedia or navigator.webkitGetUserMedia
-      console.log screen_constraints
       navigator.getUserMedia screen_constraints, ((stream) ->
         #document.querySelector("video").src = URL.createObjectURL(stream)
         cb(stream)
@@ -98,9 +98,17 @@ $ ->
     !!window.chrome &&
     !!chrome.webstore &&
     !!chrome.webstore.install &&
-    chrome.webstore.install('https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom', (-> location.reload() ), ((what)-> console.log(what) ))
+    chrome.webstore.install 'https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom', ->
+      location.reload()
+    , ->
+      # if inline install fails, we
+      # need to visualize a button:
+      # <a id="chrome-plugin-link" target="_blank" href="https://chrome.google.com/webstore/detail/teleporting-screen/dbkiolhkacgipikjnjncjifknfmfogom">Chrome Plugin</a>
+      # since window open does not work (popup gets blocked)
 
   if chrome.app.isInstalled
     console.log "INSTALLED"
   else
     console.log "NOT INSTALLED"
+
+  Ladda.bind('#share-btn', { timeout: 2000 } );
