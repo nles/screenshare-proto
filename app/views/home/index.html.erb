@@ -58,9 +58,7 @@
       <h1>teleport screen</h1>
       <h4>one click secure screen sharing</h4>
       <br />
-      <input style="width:25%;margin:0 auto;text-align:center;" id="identifier" type="text" placeholder="Identifier" /><br />
-      <button id="share-btn" class="button round">Share A Screen</button>
-      <%#<button id="view-btn" class="button round">View A Screen</button>%>
+      <button id="share-btn" class="ladda-button" data-color="blue" data-style="expand-right">Share A Screen</button>
       <br />
       <a id="extension-install-button">
         Add to Chrome
@@ -70,7 +68,14 @@
         The screen can be viewed at <a href="https://rtc.ymme.info" target="_blank">https://rtc.ymme.info/<span class='id-placeholder'></span></a>
       </div>
       <div id="opened" style="display:none;">Someone opened a view of your screen</div>
+      <br />
+      <a href="#" data-reveal-id="share-modal">Click Me For A Modal</a>
     </div>
+  </div>
+
+  <div id="share-modal" class="reveal-modal" data-reveal>
+    <h1>Hello</h1>
+    <p>Stepped instructions here if sharing does not work with one click for whatever reason</p>
   </div>
 </div>
 <% end %>
