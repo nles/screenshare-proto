@@ -1,5 +1,5 @@
 <% if @screen_id %>
-<div class="row">
+  <div class="row">
   <div class="large-12" id="ui">
     <br />
     <div class="viewing-caption">Viewing a screen called <strong><%= @screen_id %></strong></div>
@@ -11,71 +11,79 @@
 </div>
 <input style="display:none;" id="identifier" type="text" value="<%= @screen_id %>" />
 <% content_for :javascripts do %>
-<script>jQuery(function(){ window['viewScreen'](); });</script>
+  <script>jQuery(function(){ window['viewScreen'](); });</script>
 <% end %>
 
 <% else %>
-  <div id="action-bar">
-    <div id="action-bar-area">
-    
-      
-      <div id="mute-button" class="action-bar-item unmuted" title="Mute">
-        <div class="action-bar-icon"></div>
-      </div>
-      
-      <div id="timer-button" class="action-bar-item right action-bar-dialog" title="Email form to send feedback">
-        <div class="action-bar-text">Send Feedback</div>
-        <div class="action-bar-icon"></div>
-      </div>
-      
-      <div id="meander-button" class="action-bar-item right action-bar-dialog" title="FAQ">
-        <div class="action-bar-text">FAQ</div>
-        <div class="action-bar-icon"></div>
-      </div>
-      
-      <div id="share-button" class="action-bar-item right action-bar-dialog" title="Share via Facebook, Twitter, etc.">
-        <div class="action-bar-text">Share</div>
-        <div class="action-bar-icon"></div>
-      </div>
-      
-      <div id="email-button" class="action-bar-item right action-bar-dialog" title="Button">
-        <div class="action-bar-text">Button</div>
-        <div class="action-bar-icon"></div>
-      </div>
-      
+<div id="action-bar">
+  <div id="action-bar-area">
+    <div id="mute-button" class="action-bar-item unmuted" title="Mute">
+      <div class="action-bar-icon"></div>
     </div>
-    
+    <div id="timer-button" class="action-bar-item right action-bar-dialog" title="Email form to send feedback">
+      <div class="action-bar-text">Send Feedback</div>
+      <div class="action-bar-icon"></div>
+    </div>
+    <div id="meander-button" class="action-bar-item right action-bar-dialog" title="FAQ">
+      <div class="action-bar-text">FAQ</div>
+      <div class="action-bar-icon"></div>
+    </div>
+    <div id="share-button" class="action-bar-item right action-bar-dialog" title="Share via Facebook, Twitter, etc.">
+      <div class="action-bar-text">Share</div>
+      <div class="action-bar-icon"></div>
+    </div>
+    <div id="email-button" class="action-bar-item right action-bar-dialog" title="Button">
+      <div class="action-bar-text">Button</div>
+      <div class="action-bar-icon"></div>
+    </div>
   </div>
-
-
+</div>
 
 <div class="row">
   <div class="large-12" id="ui">
     <div style="text-align:center">
-
       <br />
       <br />
       <h1>teleport screen</h1>
-      <h4>one click secure screen sharing</h4>
+      <h4>simple and secure screen sharing</h4>
       <br />
-      <button id="share-btn" class="ladda-button" data-color="blue" data-style="expand-right">Share A Screen</button>
+      <button id="share-step-1" class="ladda-button" data-color="blue" data-style="expand-right">Share A Screen</button>
       <br />
-      <a id="extension-install-button">
-        Add to Chrome
-      </a>
       <div id="sharing" style="display:none;">
         You are sharing a screen.<br />
         The screen can be viewed at <a href="https://rtc.ymme.info" target="_blank">https://rtc.ymme.info/<span class='id-placeholder'></span></a>
       </div>
       <div id="opened" style="display:none;">Someone opened a view of your screen</div>
       <br />
-      <a href="#" data-reveal-id="share-modal">Click Me For A Modal</a>
+      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;">Stop Sharing</button>
+      <br />
     </div>
   </div>
 
-  <div id="share-modal" class="reveal-modal" data-reveal>
-    <h1>Hello</h1>
-    <p>Stepped instructions here if sharing does not work with one click for whatever reason</p>
+  <div id="share-modal" class="reveal-modal small" data-reveal>
+    <div class="row">
+      <div class="small-12 medium-12 columns">
+        <h4 style="text-align:center;margin-bottom:20px;">URL for displaying your screen</h4>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-10 medium-10 columns">
+        <input type="text" id="share-identifier">
+        <div style="text-align:center; line-height: 15px;">
+          <a href="#" style="font-size:12px;" id="new-random-url">generate new random url</a>
+          <span style="font-size:10px;">&nbsp;|&nbsp;</span>
+          <a href="#" style="font-size:12px;" id="select-ending">type your own ending</a>
+          <!--
+          <a href="#" style="font-size:12px;" id="select-all">select all</a>
+          <span style="font-size:10px;">&nbsp;|&nbsp;</span>
+          <a href="#" style="font-size:12px;" id="select-ending">select ending</a>
+          -->
+        </div>
+      </div>
+      <div class="small-2 medium-2 columns">
+        <button id="share-step-2" class="button small postfix expand">Share!</button>
+      </div>
+    </div>
   </div>
 </div>
 <% end %>

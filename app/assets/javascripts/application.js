@@ -17,6 +17,13 @@
 //= require peer
 //= require spin
 //= require ladda
-//= require_tree .
+//= require_tree ./autoload
 
 $(function(){ $(document).foundation(); });
+
+(function($){
+  $.fn.setCursorToTextEnd = function() {
+    var $initialVal = this.val();
+    this.val($initialVal);
+  };
+})(jQuery);

@@ -6,7 +6,7 @@ RTCDetect.screen = {
   chromeMediaSource: 'screen',
   getSourceId: function (callback) {
     screenCallback = callback;
-    window.postMessage('get-sourceId', '*');
+    window.postMessage('teleporting-screen-get-sourceId', '*');
   },
   onMessageCallback: function (data) {
     // "cancel" button is clicked
@@ -15,13 +15,11 @@ RTCDetect.screen = {
       if (screenCallback) return screenCallback('PermissionDeniedError');
       else throw new Error('PermissionDeniedError');
     }
-
-    // extension notified his presence
-    if (data == 'rtcmulticonnection-extension-loaded') {
+    // extension loaded
+    if (data == 'teleporting-screen-extension-loaded') {
       RTCDetect.screen.chromeMediaSource = 'desktop';
     }
-
-    // extension shared temp sourceId
+    // sourceID shared
     if (data.sourceId) {
       RTCDetect.screen.sourceId = data.sourceId;
       if (screenCallback) screenCallback(RTCDetect.screen.sourceId);

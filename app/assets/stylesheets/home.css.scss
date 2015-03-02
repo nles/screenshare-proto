@@ -1,4 +1,9 @@
 #sharing { font-size: 22px; }
 .viewing-caption { text-align: center; }
 .id-placeholder { font-weight: bold; }
+input#site-url { text-align: left; border-right: 0; box-shadow: none; padding-right: 0; min-width: 160px; }
+input#share-identifier { text-align: center; margin-bottom: 3px; }
+button#start-screen-share { width: 25%; float: left; }
+
+.reveal-modal.smallish { width: 50%; margin-left: 25%; }
 /*#remote-video-wrapper { width: 50%; }*/

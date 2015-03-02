@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom">
 
-    <title><%= content_for?(:title) ? yield(:title) : "Teleporting Screen" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Teleport Screen" %></title>
 
-    <script src="https://www.WebRTC-Experiment.com/getScreenId.js"></script>
+    <%= javascript_include_tag "teleportscreen" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
