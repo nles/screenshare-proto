@@ -34,6 +34,13 @@ $ ->
       #$("#identifier").val peer.id
     return peer
 
+  uniqueToken = ->
+    s4 = (-> Math.floor(Math.random() * 0x10000).toString 16)
+    return s4() + "" + s4() + "" + s4()
+
+  getIdentifier = ->
+    return $("#identifier").val()
+
   # ####
   # view screen
   # # REFACTOR: move to teleportscreen.js
