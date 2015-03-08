@@ -13,6 +13,30 @@
   </head>
 
   <body>
+    <div id="action-bar">
+      <div id="action-bar-area">
+        <div id="mute-button" class="action-bar-item unmuted" title="Mute">
+          <div class="action-bar-icon"></div>
+        </div>
+        <div id="timer-button" class="action-bar-item right action-bar-dialog" title="Email form to send feedback">
+          <div class="action-bar-text">Send Feedback</div>
+          <div class="action-bar-icon"></div>
+        </div>
+        <div id="meander-button" class="action-bar-item right action-bar-dialog" title="FAQ">
+          <div class="action-bar-text">FAQ</div>
+          <div class="action-bar-icon"></div>
+        </div>
+        <div id="share-button" class="action-bar-item right action-bar-dialog" title="Share via Facebook, Twitter, etc.">
+          <div class="action-bar-text">Share</div>
+          <div class="action-bar-icon"></div>
+        </div>
+        <div id="email-button" class="action-bar-item right action-bar-dialog" title="Button">
+          <div class="action-bar-text">Button</div>
+          <div class="action-bar-icon"></div>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= yield :javascripts %>

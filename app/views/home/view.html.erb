@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="large-12" id="ui">
+    <%# loader on by default, since peerjs needs to determine if the connection succeeds or fails %>
+    <div id="loader">
+      <br /><br />
+      <img src="<%= image_url('big-loader.gif'); %>" />
+      <br /><br />
+      <p>Waiting for the screen <strong><%= @screen_id %></strong></p>
+    </div>
+    <%# peer connection is successfull, so display the incoming screen video %>
+    <div id="screen-found" style="display:none;">
+      <br />
+      <div class="viewing-caption">Viewing a screen called <strong><%= @screen_id %></strong></div>
+      <hr />
+      <div id="remote-video-wrapper">
+        <video id="remote-video" muted="true" width="100%" autoplay controls></video>
+      </div>
+    </div>
+    <%# peer connection failed %>
+    <div id="screen-not-found" style="display:none;">
+      <br /><br />
+      <h3>Screen not found :(</h3>
+    </div>
+  </div>
+</div>
+<input style="display:none;" id="identifier" type="text" value="<%= @screen_id %>" />
+<% content_for :javascripts do %>
+  <script>jQuery(function(){ window['viewScreen'](); });</script>
+<% end %>

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def index
+  def view
     @screen_id = params[:screen_id]
   end
 end
