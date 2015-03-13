@@ -1,0 +1,61 @@
+@import 'variables';
+
+#action-bar-area {
+  width: 1000px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+#action-bar {
+  position: static;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 45px;
+  background-color: $fbblue;
+  padding: 0;
+  margin: 0;
+  color: #FFF;
+}
+
+.action-bar-divider {
+  height: 100%;
+  width: 1px;
+  background-color: #FFF;
+}
+
+#action-bar-area {
+  margin: 0 auto;
+  width: 900px;
+}
+
+.action-bar-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.action-bar-icon {
+  display: none;
+}
+
+html body #action-bar #action-bar-area .action-bar-item:active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.action-bar-item.right {
+  float: right;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 5px;
+  background: $fbdarkblue; // button background color
+}
+
+#action-bar #action-bar-area .action-bar-item.currently-selected {
+  background-color: rgba(255, 255, 255, 0.7);
+}
