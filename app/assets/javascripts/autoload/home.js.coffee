@@ -64,6 +64,10 @@ $ ->
   $("#new-random-url").click ->
     generateRandomUrl()
 
+  $("#language-select select").change ->
+    lang = $(@).val()
+    window.location = "?lang="+lang
+
   # init
   generateRandomUrl()
   Ladda.bind('#share-step-1', { timeout: 2000 } );

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom">
 
-    <title><%= content_for?(:title) ? yield(:title) : "Teleport Screen" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t('service_name') %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -18,24 +18,30 @@
         <div id="mute-button" class="action-bar-item unmuted" title="Mute">
           <div class="action-bar-icon"></div>
         </div>
-        <div id="timer-button" class="action-bar-item right action-bar-dialog" title="Email form to send feedback">
-          <div class="action-bar-text">Send Feedback</div>
+        <div id="" class="action-bar-item right action-bar-dialog" title="<%= t('menu.feedback_tooltip') %>">
+          <div class="action-bar-text"><%= t('menu.feedback') %></div>
           <div class="action-bar-icon"></div>
         </div>
-        <div id="meander-button" class="action-bar-item right action-bar-dialog" title="FAQ">
-          <div class="action-bar-text">FAQ</div>
+        <div id="" class="action-bar-item right action-bar-dialog" title="<%= t('menu.faq_tooltip') %>">
+          <div class="action-bar-text"><%= t('menu.faq') %></div>
           <div class="action-bar-icon"></div>
         </div>
-        <div id="share-button" class="action-bar-item right action-bar-dialog" title="Share via Facebook, Twitter, etc.">
-          <div class="action-bar-text">Share</div>
+        <div id="share-button" class="action-bar-item right action-bar-dialog" title="<%= t('menu.share_tooltip') %>">
+          <div class="action-bar-text"><%= t('menu.share') %></div>
           <div class="action-bar-icon"></div>
         </div>
-        <div id="email-button" class="action-bar-item right action-bar-dialog" title="Button">
-          <div class="action-bar-text">Button</div>
+        <div id="email-button" class="action-bar-item right action-bar-dialog" title="<%= t('menu.button_tooltip') %>">
+          <div class="action-bar-text"><%= t('menu.button') %></div>
           <div class="action-bar-icon"></div>
+        </div>
+        <div id="language-select">
+          <%= form_tag do |form| %>
+          <%= select_tag :language, options_for_select([['English', 'en'], ['Finnish', 'fi']], I18n.locale.to_s) %>
+          <% end %>
         </div>
       </div>
     </div>
+  </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

@@ -3,46 +3,48 @@
     <div style="text-align:center">
       <br />
       <br />
-      <h1>teleport screen</h1>
-      <h4>simple and secure screen sharing</h4>
+      <h1 id="service-name"><%= t('service_name') %></h1>
+      <h4 id="service-slogan"><%= t('service_slogan') %></h4>
       <br />
-      <button id="share-step-1" class="ladda-button" data-color="blue" data-style="expand-right">Share A Screen</button>
+      <button id="share-step-1" class="ladda-button" data-color="blue" data-style="expand-right"><%= t('home.share_ui.btn_step1') %></button>
       <br />
       <div id="sharing" style="display:none;">
-        You are sharing a screen.<br />
-        The screen can be viewed at <a href="https://rtc.ymme.info" target="_blank">https://rtc.ymme.info/<span class='id-placeholder'></span></a>
+        <%= t('home.share_ui.sharing') %><br />
+        <%= t('home.share_ui.view_at', :link => "<a href='#{t :service_url}' target='_blank'>#{t :service_url}/<span class='id-placeholder'></span></a>") %>
       </div>
-      <div id="opened" style="display:none;">Someone opened a view of your screen</div>
+      <div id="opened" style="display:none;"><%= t('home.share_ui.someone_opened') %></div>
       <br />
-      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;">Stop Sharing</button>
+      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;"><% t('home.share_ui.stop_sharing') %></button>
       <br />
       <br />
-      <img src="<%= image_url('steps.png'); %>" />
+      <div id="share-steps">
+        <div class='images'><img src="<%= image_url('steps.png'); %>" /></div>
+        <div class="steps-wrapper">
+          <div class='step step1'><div class='step-text'><%= t('home.steps.step1') %></div></div>
+          <div class='step step2'><div class='step-text'><%= t('home.steps.step2') %></div></div>
+          <div class='step step3'><div class='step-text'><%= t('home.steps.step3') %></div></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div id="share-modal" class="reveal-modal small" data-reveal>
     <div class="row">
       <div class="small-12 medium-12 columns">
-        <h4 style="text-align:center;margin-bottom:20px;">URL for displaying your screen</h4>
+        <h4 style="text-align:center;margin-bottom:20px;"><%= t('home.share_ui.url_header') %></h4>
       </div>
     </div>
     <div class="row collapse">
       <div class="small-10 medium-10 columns">
         <input type="text" id="share-identifier">
         <div style="text-align:center; line-height: 15px;">
-          <a href="#" style="font-size:12px;" id="new-random-url">generate new random url</a>
+          <a href="#" style="font-size:12px;" id="new-random-url"><%= t('home.share_ui.new_random') %></a>
           <span style="font-size:10px;">&nbsp;|&nbsp;</span>
-          <a href="#" style="font-size:12px;" id="select-ending">type your own ending</a>
-          <!--
-          <a href="#" style="font-size:12px;" id="select-all">select all</a>
-          <span style="font-size:10px;">&nbsp;|&nbsp;</span>
-          <a href="#" style="font-size:12px;" id="select-ending">select ending</a>
-          -->
+          <a href="#" style="font-size:12px;" id="select-ending"><%= t('home.share_ui.own_ending') %></a>
         </div>
       </div>
       <div class="small-2 medium-2 columns">
-        <button id="share-step-2" class="button small postfix expand">Share!</button>
+        <button id="share-step-2" class="button small postfix expand"><%= t('home.share_ui.btn_step2') %></button>
       </div>
     </div>
   </div>

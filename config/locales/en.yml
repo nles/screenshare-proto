@@ -20,4 +20,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  service_url: "https://rtc.ymme.info"
+  service_name: "Teleport Screen"
+  service_slogan: "Simple and secure screen sharing"
+  menu:
+    button: "Button"
+    button_tooltip: "Button"
+    share: "Share"
+    share_tooltip: "Share via Facebook, Twitter, etc."
+    faq: "FAQ"
+    faq_tooltip: "FAQ"
+    feedback: "Send Feedback"
+    feedback_tooltip: "Email form to send feedback"
+  home:
+    share_ui:
+      btn_step1: "Share A Screen"
+      btn_step2: "Share!"
+      url_header: "URL for displaying your screen"
+      new_random: "generate new random url"
+      own_ending: "type your own ending"
+      sharing: "You are sharing a screen."
+      view_at: "The screen can be viewed at %{link}"
+      someone_opened: "Someone opened a view of your screen"
+      stop_sharing: "Stop Sharing"
+    steps:
+      step1: "Click on the link above and follow the instructions to start sharing your screen"
+      step2: "Copy the generated link and share it with anyone"
+      step3: "Your screen can be viewed by following the link"
+
