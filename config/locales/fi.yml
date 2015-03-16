@@ -43,6 +43,10 @@ fi:
       view_at: "Näyttöä pystyy katselemaan osoiteesta %{link}"
       someone_opened: "Joku katselee näyttöäsi"
       stop_sharing: "Lopeta jakaminen"
+    view_ui:
+      waiting_for_screen: "Odotetaan näyttöä nimeltään"
+      viewing_a_screen: "Katsellaan näyttöä nimeltään"
+      screen_not_found: "Näyttöä ei löytynyt :("
     steps:
       step1: "Klikkaa yläpuolella olevaa linkkiä ja seuraa ohjeita"
       step2: "Kopioi näyttösi URL-osoite ja jaa se kenelle tahansa"

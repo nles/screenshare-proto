@@ -10,11 +10,11 @@
       <br />
       <div id="sharing" style="display:none;">
         <%= t('home.share_ui.sharing') %><br />
-        <%= t('home.share_ui.view_at', :link => "<a href='#{t :service_url}' target='_blank'>#{t :service_url}/<span class='id-placeholder'></span></a>") %>
+        <%= t('home.share_ui.view_at', :link => "<a href='#{t :service_url}' target='_blank'>#{t :service_url}/<span class='id-placeholder'></span></a>").html_safe %>
       </div>
       <div id="opened" style="display:none;"><%= t('home.share_ui.someone_opened') %></div>
       <br />
-      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;"><% t('home.share_ui.stop_sharing') %></button>
+      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;"><%= t('home.share_ui.stop_sharing') %></button>
       <br />
       <br />
       <div id="share-steps">

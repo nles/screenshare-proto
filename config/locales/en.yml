@@ -43,6 +43,10 @@ en:
       view_at: "The screen can be viewed at %{link}"
       someone_opened: "Someone opened a view of your screen"
       stop_sharing: "Stop Sharing"
+    view_ui:
+      waiting_for_screen: "Waiting for a screen called"
+      viewing_a_screen: "Viewing a screen called"
+      screen_not_found: "Screen not found :("
     steps:
       step1: "Click on the link above and follow the instructions to start sharing your screen"
       step2: "Copy the generated link and share it with anyone"

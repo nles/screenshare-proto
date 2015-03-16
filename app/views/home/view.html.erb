@@ -5,12 +5,12 @@
       <br /><br />
       <img src="<%= image_url('big-loader.gif'); %>" />
       <br /><br />
-      <p>Waiting for the screen <strong><%= @screen_id %></strong></p>
+      <p><%= t 'home.view_ui.waiting_for_screen' %> <strong><%= @screen_id %></strong></p>
     </div>
     <%# peer connection is successfull, so display the incoming screen video %>
     <div id="screen-found" style="display:none;">
       <br />
-      <div class="viewing-caption">Viewing a screen called <strong><%= @screen_id %></strong></div>
+      <div class="viewing-caption"><%= t 'home.view_ui.viewing_a_screen' %> <strong><%= @screen_id %></strong></div>
       <hr />
       <div id="remote-video-wrapper">
         <video id="remote-video" muted="true" width="100%" autoplay controls></video>
@@ -19,7 +19,7 @@
     <%# peer connection failed %>
     <div id="screen-not-found" style="display:none;">
       <br /><br />
-      <h3>Screen not found :(</h3>
+      <h3><%= t 'home.view_ui.screen_not_found' %></h3>
     </div>
   </div>
 </div>
