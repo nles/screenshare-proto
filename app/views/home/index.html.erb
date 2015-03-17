@@ -69,3 +69,14 @@
     </div>
   </div>
 </div>
+
+<% if @extension_just_installed %>
+  <% content_for :javascripts do %>
+    <script>
+    $(function(){
+      TeleportScreen.extensionIsLoaded = true
+      $("#share-step-1").click()
+    });
+    </script>
+  <% end %>
+<% end %>

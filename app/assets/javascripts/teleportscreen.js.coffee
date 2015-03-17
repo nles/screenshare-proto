@@ -63,7 +63,7 @@
     chrome.webstore &&
     chrome.webstore.install &&
     chrome.webstore.install @chromeExtensionURL, ->
-      window.location = "#extension-installed"
+      window.location = "/extension-just-installed"
     , ->
       # if inline install fails, we
       # need to visualize a button
