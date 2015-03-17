@@ -1,6 +1,7 @@
 @TeleportScreen =
   extensionIsLoaded: false
   serviceUrl: "https://rtc.ymme.info"
+  chromeExtensionURL: "https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom"
   screenConstraints: {}
   randomId: null
   sourceId: null
@@ -56,18 +57,20 @@
           chromeMediaSourceId: @sourceId
         optional: []
 
-  initPluginInstall: (callback) ->
+  initExtensionInstall: (callback) ->
     navigator.webkitGetUserMedia &&
     window.chrome &&
     chrome.webstore &&
     chrome.webstore.install &&
-    chrome.webstore.install 'https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom', ->
-      location.reload()
+    chrome.webstore.install @chromeExtensionURL, ->
+      window.location = "#extension-installed"
     , ->
       # if inline install fails, we
-      # need to visualize a button:
-      # <a id="chrome-plugin-link" target="_blank" href="https://chrome.google.com/webstore/detail/teleporting-screen/dbkiolhkacgipikjnjncjifknfmfogom">Chrome Plugin</a>
+      # need to visualize a button
       # since window open does not work (popup gets blocked)
+      $("#ext-inline-install-link").hide()
+      $("#ext-inline-install-failed").show()
+      $("#chrome-extension-fallback-link").attr('href',TeleportScreen.chromeExtensionURL)
 
   # helpers
   initPeerConnection: (id) ->

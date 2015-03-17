@@ -29,22 +29,42 @@
   </div>
 
   <div id="share-modal" class="reveal-modal small" data-reveal>
-    <div class="row">
-      <div class="small-12 medium-12 columns">
-        <h4 style="text-align:center;margin-bottom:20px;"><%= t('home.share_ui.url_header') %></h4>
-      </div>
-    </div>
-    <div class="row collapse">
-      <div class="small-10 medium-10 columns">
-        <input type="text" id="share-identifier">
-        <div style="text-align:center; line-height: 15px;">
-          <a href="#" style="font-size:12px;" id="new-random-url"><%= t('home.share_ui.new_random') %></a>
-          <span style="font-size:10px;">&nbsp;|&nbsp;</span>
-          <a href="#" style="font-size:12px;" id="select-ending"><%= t('home.share_ui.own_ending') %></a>
+    <div class="extension-installed" style="display:none;">
+      <div class="row collapse">
+        <div class="medium-12 columns">
+          <h4 style="text-align:center;margin-bottom:20px;">Screensharing extension not installed</h4>
+          <p>Vestibulum hendrerit odio vitae sapien aliquam faucibus. Nunc facilisis purus sed mi tempus, sit amet interdum arcu porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam pharetra vel lorem non dignissim. Donec tristique, sem vel aliquam laoreet, purus turpis facilisis quam, nec gravida nisl odio ut nisi. Etiam fermentum tellus vitae leo maximus, in suscipit augue commodo.</p>
         </div>
       </div>
-      <div class="small-2 medium-2 columns">
-        <button id="share-step-2" class="button small postfix expand"><%= t('home.share_ui.btn_step2') %></button>
+      <div class="row">
+        <div style="text-align:center;" class="small-12 medium-12 columns">
+          <a id="ext-inline-install-link" href="javascript:void(0)">Install extension</a>
+          <div id="ext-inline-install-failed" style="display:none";>
+            <span>Extension inline installation failed.</span><br />
+            <a href="#" id="chrome-extension-fallback-link" target="_blank">Try this direct link</a><br />
+            <span>Reload this page after the extension has been installed.</span><br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="no-extension" style="display:none;">
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <h4 style="text-align:center;margin-bottom:20px;"><%= t('home.share_ui.url_header') %></h4>
+        </div>
+      </div>
+      <div class="row collapse">
+        <div class="small-10 medium-10 columns">
+          <input type="text" id="share-identifier">
+          <div style="text-align:center; line-height: 15px;">
+            <a href="#" style="font-size:12px;" id="new-random-url"><%= t('home.share_ui.new_random') %></a>
+            <span style="font-size:10px;">&nbsp;|&nbsp;</span>
+            <a href="#" style="font-size:12px;" id="select-ending"><%= t('home.share_ui.own_ending') %></a>
+          </div>
+        </div>
+        <div class="small-2 medium-2 columns">
+          <button id="share-step-2" class="button small postfix expand"><%= t('home.share_ui.btn_step2') %></button>
+        </div>
       </div>
     </div>
   </div>

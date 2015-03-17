@@ -2,7 +2,14 @@ $ ->
   peer = null
   videoElem = $("#screen-video")
 
+  $("#ext-inline-install-link").on 'click', ->
+    TeleportScreen.initExtensionInstall()
+
   $("#share-step-1").on 'click', ->
+    $('#share-modal .no-extension, #share-modal .extension-installed').hide()
+    if TeleportScreen.extensionIsLoaded
+    then $('#share-modal .no-extension').show()
+    else $('#share-modal .extension-installed').show()
     $('#share-modal').foundation('reveal', 'open');
 
   $("#share-step-2").on 'click', ->
@@ -72,3 +79,6 @@ $ ->
   generateRandomUrl()
   Ladda.bind('#share-step-1', { timeout: 2000 } );
   #$('#share-modal').foundation('reveal', 'open');
+
+  if window.location.hash is "#extension-installed"
+    $("#share-step-1").click()
