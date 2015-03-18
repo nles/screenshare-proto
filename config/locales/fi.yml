@@ -24,8 +24,8 @@ fi:
   service_name: "Teleport Screen"
   service_slogan: "Yksinkertainen ja turvallinen näytönjako"
   menu:
-    button: "Nappula"
-    button_tooltip: "Nappula"
+    button: "Etusivu"
+    button_tooltip: "Etusivu"
     share: "Jaa"
     share_tooltip: "Jaa sosiaalisessa mediassa"
     faq: "UKK"

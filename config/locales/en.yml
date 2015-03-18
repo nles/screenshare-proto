@@ -24,8 +24,8 @@ en:
   service_name: "Teleport Screen"
   service_slogan: "Simple and secure screen sharing"
   menu:
-    button: "Button"
-    button_tooltip: "Button"
+    button: "Frontpage"
+    button_tooltip: "Frontpage"
     share: "Share"
     share_tooltip: "Share via Facebook, Twitter, etc."
     faq: "FAQ"
