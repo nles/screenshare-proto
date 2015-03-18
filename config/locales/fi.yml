@@ -21,7 +21,7 @@
 
 fi:
   service_url: "https://rtc.ymme.info"
-  service_name: "Teleport Screen"
+  service_name: "Teleporting Screen"
   service_slogan: "Yksinkertainen ja turvallinen näytönjako"
   menu:
     button: "Etusivu"

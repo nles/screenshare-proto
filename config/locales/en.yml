@@ -21,7 +21,7 @@
 
 en:
   service_url: "https://rtc.ymme.info"
-  service_name: "Teleport Screen"
+  service_name: "Teleporting Screen"
   service_slogan: "Simple and secure screen sharing"
   menu:
     button: "Frontpage"
