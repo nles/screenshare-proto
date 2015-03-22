@@ -8,7 +8,6 @@
     <title><%= content_for?(:title) ? yield(:title) : t('service_name') %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -43,8 +42,20 @@
     </div>
   </div>
 
+  <div id="has-support-body" style="display:none;">
     <%= yield %>
-    <%= javascript_include_tag "application" %>
-    <%= yield :javascripts %>
+  </div>
+  <div id="no-support-body" style="display:none;">
+    <div class="row">
+      <div class="columns medium-4 medium-centered text-center">
+        <br /><br />
+        <h4>Unfortunately your browser is unsupported</h4>
+        <p>Try <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Google Chrome</a> or <a href="https://download-chromium.appspot.com/" target="_blank">Chromium</a></p>
+      </div>
+    </div>
+  </div>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.0.7/jquery.browser.min.js" %>
+  <%= yield :javascripts %>
   </body>
 </html>

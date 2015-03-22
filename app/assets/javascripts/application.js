@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require teleportscreen
+//= require modernizr
 //= require jquery
 //= require jquery_ujs
+//= require detect_support
+//= require teleportscreen
 //= require foundation
 //= require turbolinks
 //= require peer
