@@ -13,6 +13,7 @@
 //= require modernizr
 //= require jquery
 //= require jquery_ujs
+//= require jquery.browser
 //= require detect_support
 //= require teleportscreen
 //= require foundation

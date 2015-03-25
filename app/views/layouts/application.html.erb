@@ -34,9 +34,8 @@
           <div class="action-bar-icon"></div>
         </div>
         <div id="language-select">
-          <%= form_tag do |form| %>
-          <%= select_tag :language, options_for_select([['English', 'en'], ['Finnish', 'fi']], I18n.locale.to_s) %>
-          <% end %>
+          <a href="/?lang=en"><img src="<%= image_path('gb.png') %>" alt="en" /></a>
+          <a href="/?lang=fi"><img src="<%= image_path('fi.png') %>" alt="fi" /></a>
         </div>
       </div>
     </div>
@@ -55,7 +54,6 @@
     </div>
   </div>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.0.7/jquery.browser.min.js" %>
   <%= yield :javascripts %>
   </body>
 </html>
