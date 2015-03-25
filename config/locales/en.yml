@@ -48,7 +48,6 @@ en:
       viewing_a_screen: "Viewing a screen called"
       screen_not_found: "Screen not found :("
     steps:
-      step1: "Click on the link above and follow the instructions to start sharing your screen"
+      step1: "Click on the link above and follow the instructions"
       step2: "Copy the generated link and share it with anyone"
       step3: "Your screen can be viewed by following the link"
-
