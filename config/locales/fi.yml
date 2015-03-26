@@ -34,6 +34,8 @@ fi:
     feedback_tooltip: "Lomake palautteen antamiseen"
   home:
     extension_install:
+      not_installed_title: "Jakamislaajennusta ei löytynyt"
+      not_installed_text: "Kuvan lähettimiseen tarvitset laajennuksen. Voit asentaa sen alla olevan linkin kautta."
       install: "Asenna selainlaajennus"
       wait: "Odota hetki..."
       failed: "Asennus epäonnistui."
@@ -57,3 +59,25 @@ fi:
       step1: "Klikkaa yläpuolella olevaa linkkiä ja seuraa ohjeita"
       step2: "Kopioi näyttösi URL-osoite ja jaa se kenelle tahansa"
       step3: "Näyttöäsi pystyy katselemaan linkkiä klikkaamalla"
+    faq:
+      faq_text: "What is teleporting screen?
+teleporting screen is a WebRTC based prototype for sharing your screen with friends without them needing to install any additional programs or plugins.
+
+What is WebRTC?
+Web RTC(Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling and video chat without the need of either internal or external plugins (wikipedia).
+
+Why can't my friend see me?
+teleporting screen should work on most browsers, but Google Chrome, Mozilla Firefox and Opeara have the best support for WebRTC so the experince should be best on those. More browsers will be supported as soon as the browsers start supporting WebRTC.
+
+Does this work on mobile devices?
+You should atleast be able to see your friends stream from some mobile browsers. No guarantees though.
+
+Is teleporting screen safe?
+Short answer: Yes! All media that is used in the communication is encrypted using DTLS/SRTP
+
+How many people I can connect to?
+This depends greatly on your connection quality. Up to 4 people should work with a good quality.
+
+Need more help?
+Please contact us through teleportingscreen@gmail.com. We are happy to help you."
+
