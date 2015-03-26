@@ -2,7 +2,9 @@ $ ->
   peer = null
   videoElem = $("#screen-video")
 
-  $("#ext-inline-install-link").on 'click', ->
+  $("#ext-inline-install-link").one 'click', ->
+    loadingText = $(@).attr('data-loading-text')
+    $(@).attr("href","#").text(loadingText)
     TeleportScreen.initExtensionInstall()
 
   $("#share-step-1").on 'click', ->
@@ -78,7 +80,3 @@ $ ->
   # init
   generateRandomUrl()
   Ladda.bind('#share-step-1', { timeout: 2000 } );
-  #$('#share-modal').foundation('reveal', 'open');
-
-  if window.location.hash is "#extension-installed"
-    $("#share-step-1").click()

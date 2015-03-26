@@ -33,6 +33,12 @@ en:
     feedback: "Send Feedback"
     feedback_tooltip: "Email form to send feedback"
   home:
+    extension_install:
+      install: "Install extension"
+      wait: "Please wait..."
+      failed: "Extension inline installation failed."
+      direct_link: "Try this direct link"
+      reload: "Reload this page after the extension has been installed."
     share_ui:
       btn_step1: "Share A Screen"
       btn_step2: "Share!"
@@ -48,7 +54,6 @@ en:
       viewing_a_screen: "Viewing a screen called"
       screen_not_found: "Screen not found :("
     steps:
-      step1: "Click on the link above and follow the instructions to start sharing your screen"
+      step1: "Click on the link above and follow the instructions"
       step2: "Copy the generated link and share it with anyone"
       step3: "Your screen can be viewed by following the link"
-

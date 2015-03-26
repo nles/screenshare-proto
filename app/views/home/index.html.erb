@@ -38,11 +38,11 @@
       </div>
       <div class="row">
         <div style="text-align:center;" class="small-12 medium-12 columns">
-          <a id="ext-inline-install-link" href="javascript:void(0)">Install extension</a>
+          <a id="ext-inline-install-link" href="javascript:void(0)" data-loading-text="<%= t('home.extension_install.wait') %>"><%= t('home.extension_install.install') %></a>
           <div id="ext-inline-install-failed" style="display:none";>
-            <span>Extension inline installation failed.</span><br />
-            <a href="#" id="chrome-extension-fallback-link" target="_blank">Try this direct link</a><br />
-            <span>Reload this page after the extension has been installed.</span><br />
+            <span><%= t('home.extension_install.failed') %></span><br />
+            <a href="#" id="chrome-extension-fallback-link" target="_blank"><%= t('home.extension_install.direct_link') %></a><br />
+            <span><%= t('home.extension_install.reload') %></span><br />
           </div>
         </div>
       </div>
@@ -76,6 +76,7 @@
     $(function(){
       TeleportScreen.extensionIsLoaded = true
       $("#share-step-1").click()
+      history.pushState({},'','/')
     });
     </script>
   <% end %>
