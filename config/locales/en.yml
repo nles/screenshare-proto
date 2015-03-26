@@ -33,6 +33,12 @@ en:
     feedback: "Send Feedback"
     feedback_tooltip: "Email form to send feedback"
   home:
+    extension_install:
+      install: "Install extension"
+      wait: "Please wait..."
+      failed: "Extension inline installation failed."
+      direct_link: "Try this direct link"
+      reload: "Reload this page after the extension has been installed."
     share_ui:
       btn_step1: "Share A Screen"
       btn_step2: "Share!"

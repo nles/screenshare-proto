@@ -33,6 +33,12 @@ fi:
     feedback: "Lähetä palautetta"
     feedback_tooltip: "Lomake palautteen antamiseen"
   home:
+    extension_install:
+      install: "Asenna selainlaajennus"
+      wait: "Odota hetki..."
+      failed: "Asennus epäonnistui."
+      direct_link: "Kokeile tätä suoraa linkkiä"
+      reload: "Lataa sivu uudelleen kun lisäosa on asennettu."
     share_ui:
       btn_step1: "Jaa Näyttö"
       btn_step2: "Jaa!"
