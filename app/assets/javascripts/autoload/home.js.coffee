@@ -14,6 +14,15 @@ $ ->
     else $('#share-modal .extension-installed').show()
     $('#share-modal').foundation('reveal', 'open');
 
+  $("#faq-button").on 'click', ->
+    $('#faq-modal').show()
+    $('#faq-modal').foundation('reveal', 'open');
+
+  $("#feedback-button").on 'click', ->
+    $('#feedback-modal').show()
+    $('#feedback-modal').foundation('reveal', 'open');
+
+
   $("#share-step-2").on 'click', ->
     identifier = $("#share-identifier").val().split("/").pop()
     return if identifier is ""

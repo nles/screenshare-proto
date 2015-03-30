@@ -68,6 +68,44 @@
       </div>
     </div>
   </div>
+
+
+  <div id="faq-modal" class="reveal-modal medium" data-reveal>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <h4 style="text-align:center;margin-bottom:20px;"><%= t('home.faq.faq_title') %></h4>
+        </div>
+      </div>
+      <div class="row collapse">
+        <div class="small-12 medium-12 columns">
+          <div style="text-align:center; line-height: 15px;">
+            <p><%= t('home.faq.faq_text_html') %></p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="feedback-modal" class="reveal-modal small" data-reveal>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <h4 style="text-align:center;margin-bottom:20px;"><%= t('home.feedback.feedback_title') %></h4>
+        </div>
+      </div>
+      <div class="row collapse">
+        <div class="small-12 medium-12 columns">
+          <div style="text-align:center; line-height: 15px;">
+            <p><%= t('home.feedback.feedback_text') %></p>
+          </div>
+          <div style="text-align:center; line-height: 15px;">
+            <a href="mailto:teleportscreen@gmail.com" target="_top">teleportscreen@gmail.com</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
 </div>
 
 <% if @extension_just_installed %>
