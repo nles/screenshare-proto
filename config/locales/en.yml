@@ -68,16 +68,16 @@ en:
 teleporting screen is a WebRTC based prototype for sharing your screen with friends without them needing to install any additional programs or plugins.<br>
 <br>
 <b>What is WebRTC?</b><br>
-Web RTC(Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling and video chat without the need of either internal or external plugins (wikipedia).<br>
+WebRTC (Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling and video chat without the need of either internal or external plugins (wikipedia).<br>
 <br>
 <b>Why can't my friend see me?</b><br>
-teleporting screen should work on most browsers, but Google Chrome, Mozilla Firefox and Opeara have the best support for WebRTC so the experince should be best on those. More browsers will be supported as soon as the browsers start supporting WebRTC.<br>
+Teleporting screen currently works only on Chromium and Google Chrome browsers. We are working on supporting more browsers soon.<br>
 <br>
 <b>Does this work on mobile devices?</b><br>
 You should atleast be able to see your friends stream from some mobile browsers. No guarantees though.<br>
 <br>
 <b>Is teleporting screen safe?</b><br>
-Short answer: Yes! All media that is used in the communication is encrypted using DTLS/SRTP<br>
+Short answer: Yes! Only the image of your screen is being shared, so there is no possibility for anyone to take control of your screen. All media that is used in the communication is encrypted using DTLS/SRTP protocols.<br>
 <br>
 <b>How many people I can connect to?</b><br>
 This depends greatly on your connection quality. Up to 4 people should work with a good quality.<br>
