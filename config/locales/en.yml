@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  service_url: "https://rtc.ymme.info"
+  service_url: "https://teleportingscreen.com"
   service_name: "Teleporting Screen"
   service_slogan: "Simple and secure screen sharing"
   menu:
