@@ -1,6 +1,6 @@
 @TeleportScreen =
   extensionIsLoaded: false
-  serviceUrl: "https://rtc.ymme.info"
+  serviceUrl: "https://teleportingscreen.com"
   chromeExtensionURL: "https://chrome.google.com/webstore/detail/dbkiolhkacgipikjnjncjifknfmfogom"
   screenConstraints: {}
   randomId: null
