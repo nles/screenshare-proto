@@ -7,7 +7,7 @@ input#site-url { text-align: left; border-right: 0; box-shadow: none; padding-ri
 input#share-identifier { text-align: center; margin-bottom: 3px; }
 button#start-screen-share { width: 25%; float: left; }
 
-.reveal-modal { margin-bottom: 50px; }
+.reveal-modal { margin-bottom: 50px !important; }
 .reveal-modal.smallish { width: 50%; margin-left: 25%; }
 /*#remote-video-wrapper { width: 50%; }*/
 
