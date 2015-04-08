@@ -64,24 +64,23 @@ fi:
       feedback_text: "Voit lähettää palautetta kehittäjille osoitteeseen:"
     faq:
       faq_title: "Usein Kysytyt Kysymykset"
-      faq_text_html: "What is teleporting screen?<br>
-teleporting screen is a WebRTC based prototype for sharing your screen with friends without them needing to install any additional programs or plugins.<br>
+      faq_text_html: "<b>Mikä on Teleporting Screen?</b><br>
+Teleporting Screen on palvelu näyttösi jakamiseen valitsemiesi henkilöiden kanssa ilman että heidän tarvitsee asentaa ylimääräisiä ohjelmia koneelleen. Palvelu käyttää WebRTC teknologiaa jakamisen toteutukseen.<br>
 <br>
-What is WebRTC?<br>
-Web RTC(Web Real-Time Communication) is an API definition drafted by the World Wide Web Consortium (W3C) that supports browser-to-browser applications for voice calling and video chat without the need of either internal or external plugins (wikipedia).<br>
+<b>Mikä on WebRTC?</b><br>
+WebRTC (Web Real-Time Communication) on ohjelmointirajapinta, jota kehittää World Wide Web Consortium (W3C) mahdollistaakseen reaaliaikaiset yhteydet, kuten äänipuhelut, videopuhelut, ja P2P-yhteydet kahden selaimen välille ilman selainlaajennoksia.<br>
 <br>
-Why can't my friend see me?<br>
-teleporting screen should work on most browsers, but Google Chrome, Mozilla Firefox and Opeara have the best support for WebRTC so the experince should be best on those. More browsers will be supported as soon as the browsers start supporting WebRTC.<br>
+<b>Miksi näytön jakaminen ei toimi?</b><br>
+Teleporting Screen sivuston beta-versio toimii vain Chromium ja Google Chrome selaimilla. Työskentelemme ahkerasti saadaksemme tuettua useampia selaimia.<br />
 <br>
-Does this work on mobile devices?<br>
-You should atleast be able to see your friends stream from some mobile browsers. No guarantees though.<br>
+<b>Toimiiko palvelu mobiililaitteilla?</b><br>
+Jotkin mobiiliselaimet mahdollistavat ainakin kuvan vastaanottamisen.<br />
 <br>
-Is teleporting screen safe?<br>
-Short answer: Yes! All media that is used in the communication is encrypted using DTLS/SRTP<br>
+<b>Onko palvelua turvallista käyttää?</b><br>
+Lyhyt vastaus: Kyllä! Vain kuva näytöstäsi jaetaan, joten vastaanottajalla tai muilla ei ole mitään mahdollisuutta esimerkiksi päästä kontrolloimaan näyttöäsi. Yhteys sinun ja vastaanottajan välillä on myös salattua.<br />
 <br>
-How many people I can connect to?<br>
-This depends greatly on your connection quality. Up to 4 people should work with a good quality.<br>
+<b>Kuinka monelle pystyn näyttöni jakamaan?</b><br>
+Yhteys on peer-to-peer, joten tähän vaikuttaa suuresti Internet-yhteytesi nopeus. Jakamisen pitäisi toimia hyvin ainakin neljälle henkilölle hyvällä kuvanlaadulla.<br />
 <br>
-Need more help?<br>
-Please contact us through teleportingscreen@gmail.com. We are happy to help you."
-
+<b>Tarvitsetko lisää apua</b><br>
+Voit ottaa meihin yhteyttä osoitteeseen teleporting.screen@gmail.com ja autamme mielellämme."
