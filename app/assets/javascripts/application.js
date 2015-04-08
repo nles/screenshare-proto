@@ -17,7 +17,6 @@
 //= require detect_support
 //= require teleportscreen
 //= require foundation
-//= require turbolinks
 //= require peer
 //= require spin
 //= require ladda
