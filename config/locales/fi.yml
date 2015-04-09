@@ -34,8 +34,8 @@ fi:
     feedback_tooltip: "Lomake palautteen antamiseen"
   home:
     extension_install:
-      not_installed_title: "Jakamislaajennusta ei löytynyt"
-      not_installed_text: "Kuvan lähettimiseen tarvitset laajennuksen. Voit asentaa sen alla olevan linkin kautta."
+      not_installed_title: "Selainlaajennusta ei löytynyt"
+      not_installed_text: "Oman näyttösi jakamiseen tarvitset yksinkertaisen selainlaajennuksen. Toiminnallisuus on käytännössä jo sisäänrakennettuna selaimeesi, mutta tekniikan uutuuden vuoksi sitä ei vielä toistaiseksi ole aktivoitu oletuksena. Selainlaajennus mahdollistaa ominaisuuden aktivoinnin ilman monimutkaista asetustiedostoihin kajoamista. Voit asentaa laajennuksen alla olevan linkin kautta."
       install: "Asenna selainlaajennus"
       wait: "Odota hetki..."
       failed: "Asennus epäonnistui."

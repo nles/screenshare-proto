@@ -35,7 +35,7 @@ en:
   home:
     extension_install:
       not_installed_title: "Screensharing extension not installed"
-      not_installed_text: "To share your screen you need to install an extension to your browser. You can use the below link to do so."
+      not_installed_text: "You need a simple browser extension to share your screen. The functionality is basically built into your browser, but since the technology is so new, it is not enabled by default. Installing this browser extension just enables the functionality without you having to get into complicated changes to your browser settings. Use the link below to install the extension."
       install: "Install extension"
       wait: "Please wait..."
       failed: "Extension inline installation failed."
