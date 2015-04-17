@@ -8,6 +8,7 @@ $ ->
     TeleportScreen.initExtensionInstall()
 
   $("#share-step-1").on 'click', ->
+    #$(@).ladda("start")
     $('#share-modal .no-extension, #share-modal .extension-installed').hide()
     if TeleportScreen.extensionIsLoaded
     then $('#share-modal .no-extension').show()
@@ -22,7 +23,6 @@ $ ->
     $('#feedback-modal').show()
     $('#feedback-modal').foundation('reveal', 'open');
 
-
   $("#share-step-2").on 'click', ->
     identifier = $("#share-identifier").val().split("/").pop()
     return if identifier is ""
@@ -32,6 +32,7 @@ $ ->
         $('#sharing').show()
         $('#share-step-1').hide()
         $('#stop-sharing').show()
+        $('#share-audio').show()
         link = $('#sharing a')
         link.attr('href',link.attr('href')+"/"+identifier)
         $('#sharing .id-placeholder').text(identifier)
@@ -43,6 +44,27 @@ $ ->
 
       extensionFailure: ->
         console.log("failure")
+
+  $("#share-audio").on 'click', ->
+    return if TeleportScreen.audioShared
+    buttonElem = $(@)
+    buttonElem.ladda()
+    buttonElem.ladda('start')
+    buttonTextElem = $(@).find(".button-text")
+    buttonTextElem.text(buttonElem.attr('data-waiting-for-permission-text'))
+    #setTimeout (-> audioShareLoad.start()), 2000
+    TeleportScreen.initAudioShare
+      success: (stream) ->
+        buttonElem.ladda('stop')
+        buttonElem.find(".button-text").text(buttonElem.attr('data-sharing-success-text'))
+        identifier = $('#sharing .id-placeholder').text()+"_AUDIO"
+        # start waiting for the viewer to connect
+        TeleportScreen.waitForConnection(identifier, stream)
+
+      mediaFailure: (error) ->
+        buttonElem.ladda('stop')
+        buttonElem.find(".button-text").text(buttonElem.attr('data-sharing-failed-text'))
+        console.log(error)
 
   $("#stop-sharing").on 'click', ->
     window.location.reload()
@@ -88,4 +110,3 @@ $ ->
 
   # init
   generateRandomUrl()
-  Ladda.bind('#share-step-1', { timeout: 2000 } );

@@ -14,7 +14,19 @@
       </div>
       <div id="opened" style="display:none;"><%= t('home.share_ui.someone_opened') %></div>
       <br />
-      <button id="stop-sharing" class="ladda-button" data-color="red" data-style="expand-right" style="display:none;"><%= t('home.share_ui.stop_sharing') %></button>
+      <div id="share-actions">
+        <button id="share-audio" class="ladda-button" data-color="blue" data-style="expand-right" style="display:none;"
+            data-waiting-for-permission-text="<%= t('home.share_ui.audio_waiting_for_permission') %>"
+            data-sharing-success-text="<%= t('home.share_ui.audio_shared') %>"
+            data-sharing-failed-text="<%= t('home.share_ui.audio_sharing_failed') %>">
+          <span class="button-text">
+            <%= t('home.share_ui.share_audio_also') %>
+          </span>
+        </button>
+        <button id="stop-sharing" class="ladda-button" data-color="red" style="display:none;">
+          <%= t('home.share_ui.stop_sharing') %>
+        </button>
+      </div>
       <br />
       <br />
       <div id="share-steps">

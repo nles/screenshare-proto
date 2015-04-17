@@ -5,14 +5,21 @@
   screenConstraints: {}
   randomId: null
   sourceId: null
-  callbacks: {success: null, extensionFailure: null, mediaFailure: null}
+  audioShared: false
+  screenShareCallbacks: {success: null, extensionFailure: null, mediaFailure: null}
+  audioShareCallbacks: {success: null, extensionFailure: null, mediaFailure: null}
+  getUserMedia: navigator.mozGetUserMedia or navigator.webkitGetUserMedia
 
   initScreenShare: (callbacks) ->
-    @callbacks = callbacks
+    @screenShareCallbacks = callbacks
     if @extensionIsLoaded
       window.postMessage('teleport-screen-get-sourceId', '*');
     else
-      @callbacks.extensionFailure()
+      @screenShareCallbacks.extensionFailure()
+
+  initAudioShare: (callbacks) ->
+    @audioShareCallbacks = callbacks
+    @getUserAudio()
 
   waitForConnection: (identifier, stream) ->
     # call back with the stream after we get a connection
@@ -29,22 +36,30 @@
     conn = peer.connect(identifier)
     # the peer sends the call when we connect
     peer.on "call", (call) ->
-      cbs['success']()
       call.answer null
       call.on "stream", (remoteStream) ->
-        # when the sender sends a stream, view it in a video element
-        $('#remote-video').prop('src', URL.createObjectURL(remoteStream));
+        cbs['success'](remoteStream)
     peer.on "error", (error) ->
-      cbs['failure']()
+      cbs['failure'](error)
 
-  onScreenShared: ->
-    navigator.getUserMedia = navigator.mozGetUserMedia or navigator.webkitGetUserMedia
-    navigator.getUserMedia @screenConstraints, (stream) ->
+  getUserAudio: ->
+    navigator.getUserMedia = navigator.getUserMedia or navigator.mozGetUserMedia or navigator.webkitGetUserMedia
+    navigator.getUserMedia {audio:true,video:false}, (stream) ->
       # if we get users media
-      TeleportScreen.callbacks.success(stream)
+      TeleportScreen.audioShared = true
+      TeleportScreen.audioShareCallbacks.success(stream)
     , (error) ->
       # if we do not get users media
-      TeleportScreen.callbacks.mediaFailure error
+      TeleportScreen.audioShareCallbacks.mediaFailure error
+
+  onScreenShared: ->
+    navigator.getUserMedia = navigator.getUserMedia or navigator.mozGetUserMedia or navigator.webkitGetUserMedia
+    navigator.getUserMedia @screenConstraints, (stream) ->
+      # if we get users media
+      TeleportScreen.screenShareCallbacks.success(stream)
+    , (error) ->
+      # if we do not get users media
+      TeleportScreen.screenShareCallbacks.mediaFailure error
 
   setScreenConstraints: (error, sourceId) ->
     @screenConstraints =
@@ -58,7 +73,7 @@
         optional: []
 
   initExtensionInstall: (callback) ->
-    navigator.webkitGetUserMedia &&
+    #navigator.webkitGetUserMedia &&
     window.chrome &&
     chrome.webstore &&
     chrome.webstore.install &&
@@ -108,7 +123,7 @@
     s4 = (-> Math.floor(Math.random() * 0x10000).toString 16)
     return s4() + "" + s4() + "" + s4()
 
-
+# listen to messages
 window.addEventListener "message", (event) ->
   return unless event.origin is window.location.origin
 

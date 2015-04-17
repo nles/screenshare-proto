@@ -15,6 +15,23 @@
       <div id="remote-video-wrapper">
         <video id="remote-video" muted="true" width="100%" autoplay controls></video>
       </div>
+      <div id="remote-audio-wrapper">
+        <audio style="display:none;" id="remote-audio" autoplay controls>
+      </div>
+      <br />
+      <%# audio sharing UI %>
+      <a id="receive-audio" class="receive-audio-link" href="javascript:void(0);"><%= t 'home.view_ui.receive_audio_also' %></a>
+      <span id="waiting-for-audio" style="display:none;">
+        <%= t 'home.view_ui.waiting_for_audio' %> <img src="<%= image_url 'small-loader.gif' %>" alt="" />
+      </span>
+      <span id="audio-not-shared" style="display:none;">
+        <%= t 'home.view_ui.sender_has_not_shared_audio' %>
+        <a class="receive-audio-link" href="javascript:void(0)"><%= t 'home.view_ui.try_again' %></a>
+      </span>
+      <a id="mute-audio" href="javascript:void(0);" style="display:none;"><%= t 'home.view_ui.mute_audio' %></a>
+      <a id="unmute-audio" href="javascript:void(0);" style="display:none;"><%= t 'home.view_ui.unmute_audio' %></a>
+      <br />
+      <br />
     </div>
     <%# peer connection failed %>
     <div id="screen-not-found" style="display:none;">

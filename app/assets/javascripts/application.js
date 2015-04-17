@@ -20,6 +20,7 @@
 //= require peer
 //= require spin
 //= require ladda
+//= require ladda.jquery
 //= require_tree ./autoload
 
 $(function(){ $(document).foundation(); });
