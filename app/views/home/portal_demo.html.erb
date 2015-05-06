@@ -38,6 +38,23 @@
       </div>
       <br />
       <br />
+      <hr />
+      <div style="position:relative;">
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; width: 200px; height: 200px; top: 0px; left: 200px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 400px; left: 10px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 400px; left: 345px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 400px; left: 690px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 920px; left: 10px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 920px; left: 345px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 920px; left: 690px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 1500px; left: 10px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 1500px; left: 345px;"></a>
+        <a href="javascript:void(0);" class="ppv" style="position: absolute; top: 1500px; left: 690px;"></a>
+        <center><img src='<%= image_path('portal-mock.jpg'); %>' /></center>
+        <div id="ppv-hover" style="position:absolute;">
+          <img src='<%= image_path('watch-overlay-mock.jpg'); %>' />
+        </div>
+      </div>
     </div>
   </div>
 
@@ -116,8 +133,13 @@
       </div>
   </div>
 
-
-
+  <div id="login-modal" class="reveal-modal small" data-reveal>
+      <div class="row collapse">
+        <div class="small-12 medium-12 columns">
+          <center><img src='<%= image_path('login-mock.gif'); %>' /></center>
+        </div>
+      </div>
+  </div>
 
 </div>
 
@@ -131,4 +153,21 @@
     });
     </script>
   <% end %>
+<% end %>
+
+<% content_for :javascripts do %>
+<script>
+jQuery("#login-button").on('click', function(){
+  jQuery('#login-modal').show();
+  jQuery('#login-modal').foundation('reveal', 'open');
+});
+$(".ppv").on('mouseover', function(){
+  addT = parseInt($(this).width())/2
+  addL = (parseInt($(this).width())/2) - 80
+  $("#ppv-hover").show().css("top",parseInt($(this).css('top'))+addT).css("left",parseInt($(this).css('left'))+addL)
+});
+$(".ppv").on('mouseout', function(){
+  $("#ppv-hover").hide()
+});
+</script>
 <% end %>

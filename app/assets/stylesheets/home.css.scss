@@ -1,3 +1,5 @@
+body { background-color: #efefef; }
+
 #service-name, #service-slogan { text-transform: lowercase; }
 
 #sharing { font-size: 22px; }
@@ -23,3 +25,8 @@ button#start-screen-share { width: 25%; float: left; }
 /* view page */
 #loader { text-align: center; }
 #screen-not-found { text-align: center; }
+
+/* TEMPORARY FOR DEMO */
+.ppv { z-index: 10000; width: 310px; height: 500px; }
+#ppv-hover { z-index: 999; width: 180px; }
+/* /TEMPORARY FOR DEMO */

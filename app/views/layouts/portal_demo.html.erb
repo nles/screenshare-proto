@@ -14,6 +14,10 @@
   <body>
     <div id="action-bar">
       <div id="action-bar-area">
+        <div id="login-button" class="action-bar-item right action-bar-dialog" title="">
+          <a class="action-bar-link">Login</a>
+          <div class="action-bar-icon"></div>
+        </div>
         <div id="feedback-button" class="action-bar-item right action-bar-dialog" title="<%= t('menu.feedback_tooltip') %>">
           <a class="action-bar-link"><%= t('menu.feedback') %></a>
           <div class="action-bar-icon"></div>
@@ -22,17 +26,6 @@
           <a class="action-bar-link"><%= t('menu.faq') %></a>
           <div class="action-bar-icon"></div>
         </div>
-        <!--
-        <div id="share-button" class="action-bar-item right action-bar-dialog" title="<%= t('menu.share_tooltip') %>">
-          <a class="action-bar-link"><%= t('menu.share') %></a>
-          <div class="action-bar-icon"></div>
-        </div>
-      -->
-        <div id="email-button" class="action-bar-item right action-bar-dialog" title="<%= t('menu.button_tooltip') %>">
-          <a href="/"  class="action-bar-link"><%= t('menu.button') %></a>
-          <div class="action-bar-icon"></div>
-        </div>
-
         <div id="language-select">
           <a href="/"><img src="<%= image_path('logo30.png') %>" alt="home" />teleportingScreen</a>
           <a href="/?lang=en"><img src="<%= image_path('gb.png') %>" alt="en" /></a>
