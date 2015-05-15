@@ -89,7 +89,7 @@
 
   # helpers
   initPeerConnection: (id) ->
-    peer = new Peer id, { host: 'scpeerjs.ymme.info', path: '/', port: 9292, secure: true, debug: 1, config:
+    peer = new Peer id, { host: 'scpeerjs.ymme.info', path: '/', port: 9292, secure: true, debug: 3, config:
       # Pass in optional STUN and TURN server for maximum network compatibility
       'iceServers': [
         {url: 'stun:stun.l.google.com:19302'}
