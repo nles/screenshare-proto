@@ -113,7 +113,7 @@
   # helpers
   initPeerConnection: (id) ->
     iceServers = $.extend({}, @stunServers, @turnServers)
-    debugLevel = if window.location.hash is "debug" then 3 else 0
+    debugLevel = if window.location.hash is "#debug" then 3 else 0
     peer = new Peer id, {
       host: 'scpeerjs.ymme.info', path: '/', http_path_prefix: '/http', ws_path_prefix: '/ws',
       port: 443, secure: true, debug: debugLevel, config: { 'iceServers': iceServers }
