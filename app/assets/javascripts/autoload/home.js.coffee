@@ -110,3 +110,6 @@ $ ->
 
   # init
   generateRandomUrl()
+
+  window.turnserversDotComAPI.iceServers (data) ->
+    TeleportScreen.turnServers = data
